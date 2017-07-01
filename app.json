@@ -1,0 +1,16 @@
+{
+  "name": "trabanderson",
+  "description": "Trabalho final disciplina",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
