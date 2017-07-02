@@ -6,7 +6,7 @@ import unittest, time, re
 class test(unittest.TestCase):
     def setUp(self):
         self.verificationErrors = []
-        self.selenium = selenium("localhost", 4444, "*chrome", "https://trabanderson.herokuapp.com/")
+        self.selenium = selenium("localhost", 4444, "*firefox", "https://trabanderson.herokuapp.com/")
         self.selenium.start()
 
     def test_test(self):
@@ -23,6 +23,19 @@ class test(unittest.TestCase):
         sel.type("name=rua", "Rua")
         sel.type("name=numero", "123")
         sel.type("name=bairro", "Nonoai")
+        sel.select("name=estado", "label=Rio de Janeiro")
+        sel.select("name=estado", "label=Rio Grande do Norte")
+        sel.select("name=estado", u"label=Rondônia")
+        sel.select("name=estado", "label=Rio Grande do Norte")
+        sel.select("name=estado", u"label=Rondônia")
+        sel.select("name=estado", "label=Rio Grande do Norte")
+        sel.select("name=estado", "label=Rio de Janeiro")
+        sel.select("name=estado", u"label=Piauí")
+        sel.select("name=estado", "label=Rio de Janeiro")
+        sel.select("name=estado", "label=Rio Grande do Norte")
+        sel.select("name=estado", u"label=Rondônia")
+        sel.select("name=estado", "label=Rio Grande do Sul")
+        sel.select("name=estado", "label=Roraima")
         sel.select("name=estado", "label=Rio Grande do Sul")
         sel.type("name=cidade", "Porto Alegre")
         sel.type("name=cep", "9172")
