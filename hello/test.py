@@ -30,13 +30,13 @@ class Test2(unittest.TestCase):
         driver.find_element_by_name("ano").clear()
         driver.find_element_by_name("ano").send_keys("1985")
         driver.find_element_by_name("rg").clear()
-        driver.find_element_by_name("rg").send_keys("8087")
+        driver.find_element_by_name("rg").send_keys("00000000")
         driver.find_element_by_name("cpf").clear()
-        driver.find_element_by_name("cpf").send_keys("000")
+        driver.find_element_by_name("cpf").send_keys("000000000")
         driver.find_element_by_name("cpf2").clear()
         driver.find_element_by_name("cpf2").send_keys("00")
         driver.find_element_by_name("rua").clear()
-        driver.find_element_by_name("rua").send_keys("Rua")
+        driver.find_element_by_name("rua").send_keys("Rua xxx")
         driver.find_element_by_name("numero").clear()
         driver.find_element_by_name("numero").send_keys("123")
         driver.find_element_by_name("bairro").clear()
@@ -45,9 +45,9 @@ class Test2(unittest.TestCase):
         driver.find_element_by_name("cidade").clear()
         driver.find_element_by_name("cidade").send_keys("Porto Alegre")
         driver.find_element_by_name("cep").clear()
-        driver.find_element_by_name("cep").send_keys("9172")
+        driver.find_element_by_name("cep").send_keys("91720")
         driver.find_element_by_name("cep2").clear()
-        driver.find_element_by_name("cep2").send_keys("0")
+        driver.find_element_by_name("cep2").send_keys("000")
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("anderson.baum@gmail.com")
         driver.find_element_by_name("login").clear()
@@ -67,6 +67,7 @@ class Test2(unittest.TestCase):
 
     def is_alert_present(self):
         try:
+            # noinspection PyDeprecation
             self.driver.switch_to_alert()
         except NoAlertPresentException as e:
             return False
@@ -74,6 +75,7 @@ class Test2(unittest.TestCase):
 
     def close_alert_and_get_its_text(self):
         try:
+            # noinspection PyDeprecation
             alert = self.driver.switch_to_alert()
             alert_text = alert.text
             if self.accept_next_alert:
